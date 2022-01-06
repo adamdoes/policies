@@ -1,0 +1,26 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: test-allowed-repo
+  annotations:
+    blueprints.cloud.google.com/title: 'test-allowed-repo'
+    cft.dev/base-version: '1'
+    cft.dev/package-version: '1'
+    cft.dev/instance-version: '1'
+upstream:
+  type: git
+  git:
+    repo: https://github.com/adamdoes/demo-policy-blueprints
+    directory: /allowed-repo-adam
+    ref: main
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/adamdoes/demo-policy-blueprints
+    directory: /allowed-repo-adam
+    ref: main
+    commit: 788ad674f030b43f760f3117e12a0f17b85780b9
+info:
+  description: test-allowed-repo
+pipeline: {}
