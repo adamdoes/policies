@@ -1,0 +1,8 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sAllowedRepos
+metadata: # kpt-merge: /allowed-repo-adam
+  name: allowed-repo-adam
+spec:
+  parameters:
+    repos:
+    - adam-repo
